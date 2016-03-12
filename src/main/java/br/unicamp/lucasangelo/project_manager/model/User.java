@@ -1,10 +1,15 @@
 package br.unicamp.lucasangelo.project_manager.model;
 
+import javax.persistence.*;
+
 /**
  * Created by lucassangelo on 2/29/16.
  */
+@Entity
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String  login;
     private String  password;
@@ -13,6 +18,9 @@ public class User {
     private String  name;
     private String  lastName;
     private String  email;
+
+    public User() {
+    }
 
     public User(Integer id, String login, String password, Integer type, Boolean active,
                 String name, String lastName, String email) {
